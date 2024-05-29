@@ -1,0 +1,13 @@
+data = nwpu
+tuning = 1
+novel = data/nwpu_novels.txt
+novelid = 0
+rand = 0
+max_epoch = 50000
+repeat = 100
+dynamic = 0
+train = dataset/training.txt
+meta = data/nwpu_traindict_bbox_10shot.txt
+valid = dataset/evaluation.txt
+gpus = 0
+num_workers=8

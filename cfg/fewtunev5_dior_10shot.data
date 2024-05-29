@@ -1,0 +1,13 @@
+data=dior
+tuning = 1
+novel = data/dior_novels.txt
+novelid = 0
+rand = 0
+max_epoch = 50000
+repeat = 100
+dynamic = 0
+meta = data/dior_traindict_bbox_10shot.txt
+train = dataset/training.txt
+valid = dataset/evaluation.txt
+gpus = 0
+num_workers=8

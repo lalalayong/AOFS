@@ -1,0 +1,5 @@
+dam,golffield,storagetank,tenniscourt,vehicle
+Expressway-Service-area,overpass,stadium,trainstation,windmill
+airplane,airport,Expressway-toll-station,harbor,groundtrackfield
+baseballfield,basketballcourt,bridge,chimney,ship
+airplane,baseballfield,tenniscourt,trainstation,windmill

@@ -1,0 +1,9 @@
+data=dior
+novel = data/dior_novels.txt
+novelid = 0
+rand = 0
+meta = data/dior_traindict_full.txt
+train = dataset/training.txt
+valid = dataset/evaluation.txt
+gpus=0
+num_workers=8
