@@ -291,35 +291,21 @@ def parse_args():
 
 
 def main():
-    dotav15_classnames = ['plane', 'baseball-diamond', 'bridge', 'ground-track-field', 'small-vehicle', 'large-vehicle', 'ship', 'tennis-court',
-                          'basketball-court', 'storage-tank', 'soccer-ball-field', 'roundabout', 'harbor', 'swimming-pool', 'helicopter', 'container-crane']
     nwpu_classnames = ['airplane', 'ship', 'storage-tank', 'baseball-diamond', 'tennis-court', 'basketball-court',
                        'ground-track-field', 'harbor', 'bridge', 'vehicle']
     nwpu_novel_classnames = ['airplane', 'baseball-diamond', 'tennis-court']
+    nwpu_base_classnames = ['ship', 'storage-tank', 'basketball-court', 'ground-track-field', 'harbor', 'bridge', 'vehicle']
 
     dior_classnames = ['airplane', 'airport', 'baseballfield', 'basketballcourt', 'bridge', 'chimney', 'dam', 'Expressway-Service-area', 'Expressway-toll-station',
                        'golffield', 'groundtrackfield', 'harbor', 'overpass', 'ship', 'stadium', 'storagetank', 'tenniscourt', 'trainstation', 'vehicle', 'windmill']
     dior_novel_classnames = ['airplane', 'baseballfield', 'tenniscourt', 'trainstation', 'windmill']
+    dior_base_classnames = ['airport', 'basketballcourt', 'bridge', 'chimney', 'dam', 'Expressway-Service-area', 'Expressway-toll-station',
+                       'golffield', 'groundtrackfield', 'harbor', 'overpass', 'ship', 'stadium', 'storagetank', 'vehicle']
 
-    dior_spilt1_novel_classnames = ['baseballfield', 'basketballcourt', 'bridge', 'chimney', 'ship']
-    dior_spilt1_base_classnames = ['airplane', 'airport', 'dam', 'Expressway-Service-area', 'Expressway-toll-station', 'golffield', 'groundtrackfield',
-                                   'harbor', 'overpass', 'stadium', 'storagetank', 'tenniscourt', 'trainstation', 'vehicle', 'windmill']
-
-    dior_spilt2_novel_classnames = ['airplane', 'airport', 'Expressway-toll-station', 'harbor', 'groundtrackfield']
-    dior_spilt2_base_classnames = ['baseballfield', 'basketballcourt', 'bridge', 'chimney', 'dam', 'Expressway-Service-area', 'golffield',
-                                   'overpass', 'ship', 'stadium', 'storagetank', 'tenniscourt', 'trainstation', 'vehicle', 'windmill']
-
-    dior_spilt3_novel_classnames = ['dam', 'golffield', 'storagetank', 'tenniscourt', 'vehicle']
-    dior_spilt3_base_classnames = ['airplane', 'airport', 'baseballfield', 'basketballcourt', 'bridge', 'chimney', 'Expressway-Service-area',
-                                   'Expressway-toll-station', 'groundtrackfield', 'harbor', 'overpass', 'ship', 'stadium', 'trainstation', 'windmill']
-
-    dior_spilt4_novel_classnames = ['Expressway-Service-area', 'overpass', 'stadium', 'trainstation', 'windmill']
-    dior_spilt4_base_classnames = ['airplane', 'airport', 'baseballfield', 'basketballcourt', 'bridge', 'chimney', 'dam', 'Expressway-toll-station',
-                                   'golffield', 'groundtrackfield', 'harbor', 'ship', 'storagetank', 'tenniscourt', 'vehicle']
 
     classnames = dior_classnames
-    novel_classnames = dior_spilt4_novel_classnames
-    base_classnames =  dior_spilt4_base_classnames
+    novel_classnames = nwpu_novel_classnames
+    base_classnames =  nwpu_base_classnames
     args = parse_args()
     base_path = args.base_path
 
