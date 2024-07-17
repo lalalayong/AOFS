@@ -47,7 +47,7 @@ python setup.py build_ext --inplace
 
 # 2. Prepare dataset
 
-Get the NWPU-R data from [this](https://drive.google.com/drive/folders/144MFcNlRLFn3Oos0H4eyUgmqpfzox0MP?usp=drive_link), or prepare custom dataset files: make sure that the data label format complies with the [DOTA](https://captain-whu.github.io/DOTA/dataset.html) dataset annotation format.
+Get the NWPU-R data from [google drive](https://drive.google.com/drive/folders/144MFcNlRLFn3Oos0H4eyUgmqpfzox0MP?usp=drive_link), or prepare custom dataset files: make sure that the data label format complies with the [DOTA](https://captain-whu.github.io/DOTA/dataset.html) dataset annotation format.
 
 ### 2.1 Split the dataset
 
@@ -105,8 +105,8 @@ num_workers=8
 Train the Model：
 
 ```
-python train.py --cfg1 models/AOFS_s.yaml 
-				--cfg2 models/reweight.yaml 
+python train.py --cfg1 models/AOFS_s.yaml
+				--cfg2 models/reweight_s.yaml 
 				--data data/nwpu_poly.yaml 
 				--cfgdata cfg/fewyolov5_nwpu.data 
 				--hyp data/hyps/hyp.finetune_nwpu.yaml 
@@ -116,7 +116,7 @@ python train.py --cfg1 models/AOFS_s.yaml
 Evaluate the Model：
 
 ```
-python val.py --weights weights/base_best.pt 
+python val.py --weights weights/base_best.pt
 			  --data data/nwpu_poly.yaml 
 			  --cfgdata cfg/fewyolov5_nwpu.data 
 			  --batch-size 1 --img 1024 --task val --device 0 --save-json 
@@ -127,9 +127,9 @@ Get the metrics：
 
 ```python
 python DOTA_devkit/dota_evaluation_task1.py
-    	--base_path	runs\val\base_nwpu_AOFS_s_run1_split\base_best
-		--annopath $DATA_ROOT\evaluation\labelTxt\{:s}.txt
-		--imagesetfile $DATA_ROOT\imgnamefile.txt  # File names of all images in the validation set
+    	--base_path	runs/val/base_nwpu_AOFS_s_run1_split/base_best
+    	--annopath $DATA_ROOT/evaluation/labelTxt/{:s}.txt
+    	--imagesetfile $DATA_ROOT/imgnamefile.txt  # File names of all images in the validation set
 ```
 
 ### 3.2 Few-shot Tuning
@@ -156,7 +156,7 @@ num_workers=8
   Train the Model with 10 shot：
 
 ```
-python train.py --weights weights/base_best.pt 
+python train.py --weights weights/base_best.pt
 				--data data/nwpu_poly.yaml 
 				--cfgdata cfg/fewtunev5_nwpu_10shot.data 
 				--hyp data/hyps/hyp.finetune_nwpu.yaml 
@@ -166,7 +166,7 @@ python train.py --weights weights/base_best.pt
 Evaluate the Model：
 
 ```
-python val.py --weights weights/tune_best.pt 
+python val.py --weights weights/tune_best.pt
 			  --data data/nwpu_poly.yaml 
 			  --cfgdata cfg/fewtunev5_nwpu_10shot.data 
 			  --batch-size 1 --img 1024 --task val --device 0 --save-json 
@@ -176,10 +176,10 @@ python val.py --weights weights/tune_best.pt
 Get the metrics：
 
 ```python
-python DOTA_devkit/dota_evaluation_task1.py \
-    	--base_path runs\val\tune_nwpu_10shot_AOFS_s_run1_split\tune_best
-		--annopath $DATA_ROOT\evaluation\labelTxt\{:s}.txt
-		--imagesetfile $DATA_ROOT\imgnamefile.txt
+python DOTA_devkit/dota_evaluation_task1.py
+    	--base_path runs/val/tune_nwpu_10shot_AOFS_s_run1_split/tune_best
+    	--annopath $DATA_ROOT/evaluation/labelTxt/{:s}.txt
+    	--imagesetfile $DATA_ROOT/imgnamefile.txt
 ```
 
 
